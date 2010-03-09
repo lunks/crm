@@ -70,3 +70,13 @@ Migrating to CreateProjects (20100309142551)
 [0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("customers")[0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("projects")[0m
+  [4;36;1mCustomer Load (0.5ms)[0m   [0;1mSELECT * FROM "customers" LIMIT 1[0m
+  [4;35;1mCustomer Load (0.2ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Acme, inc' AND "customers".id <> 1) LIMIT 1[0m
+  [4;36;1mProject Load (0.1ms)[0m   [0;1mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Our first project') LIMIT 1[0m
+  [4;35;1mCustomer Load (0.2ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Acme, inc' AND "customers".id <> 1) LIMIT 1[0m
+  [4;36;1mProject Load (0.1ms)[0m   [0;1mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Our first project') LIMIT 1[0m
+  [4;35;1mCustomer Load (0.3ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Acme, inc' AND "customers".id <> 1) LIMIT 1[0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Our first project') LIMIT 1[0m
+  [4;35;1mCustomer Load (0.2ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Acme, inc' AND "customers".id <> 1) LIMIT 1[0m
+  [4;36;1mProject Load (0.1ms)[0m   [0;1mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Our first project') LIMIT 1[0m
+  [4;35;1mProject Create (0.5ms)[0m   [0mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "customer_id") VALUES('Our first project', '2010-03-09 14:28:19', '2010-03-09 14:28:19', NULL, 1)[0m
