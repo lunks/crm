@@ -10,8 +10,8 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :customer %><br />
-    <%= f.text_field :customer %>
+    <%= f.label :customer_id %><br />
+    <%= f.select :customer_id, @customers, :prompt=>"Select..." %>
   </p>
   <p>
     <%= f.submit 'Create' %>
