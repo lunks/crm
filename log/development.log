@@ -1022,3 +1022,24 @@ Processing TasksController#new (for 127.0.0.1 at 2010-03-09 12:47:07) [GET]
 Rendering template within layouts/application
 Rendering tasks/new
 Completed in 318ms (View: 312, DB: 0) | 200 OK [http://localhost/tasks/new]
+
+
+Processing TasksController#new (for 127.0.0.1 at 2010-03-09 12:49:20) [GET]
+Rendering template within layouts/application
+Rendering tasks/new
+Rendered tasks/_form (21.7ms)
+Completed in 46ms (View: 38, DB: 0) | 200 OK [http://localhost/tasks/new]
+
+
+Processing ContractsController#index (for 127.0.0.1 at 2010-03-09 12:49:28) [GET]
+  [4;36;1mContract Load (0.5ms)[0m   [0;1mSELECT * FROM "contracts" [0m
+Rendering template within layouts/application
+Rendering contracts/index
+Completed in 71ms (View: 6, DB: 0) | 200 OK [http://localhost/contracts]
+
+
+Processing ContractsController#new (for 127.0.0.1 at 2010-03-09 12:49:29) [GET]
+Rendering template within layouts/application
+Rendering contracts/new
+Rendered contracts/_form (78.9ms)
+Completed in 92ms (View: 87, DB: 0) | 200 OK [http://localhost/contracts/new]
