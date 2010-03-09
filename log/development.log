@@ -28,3 +28,7 @@ Migrating to CreateCustomers (20100309141050)
   [4;36;1mCustomer Load (0.6ms)[0m   [0;1mSELECT * FROM "customers" LIMIT 1[0m
   [4;35;1mCustomer Load (0.5ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 2) [0m
   [4;36;1mCustomer Load (0.6ms)[0m   [0;1mSELECT * FROM "customers" [0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-03-09 11:14:10) [GET]
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/home]
