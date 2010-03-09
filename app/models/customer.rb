@@ -1,6 +1,7 @@
 class Customer < ActiveRecord::Base
   has_many :projects, :dependent=>:destroy
-  
+  has_many :contracts, :through => :projects
+
   validates_presence_of :name, :description
 
   validates_uniqueness_of :name

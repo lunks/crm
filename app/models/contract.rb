@@ -1,5 +1,5 @@
 class Contract < ActiveRecord::Base
-  # belongs_to :leader
+  belongs_to :leader, :class_name => "User", :foreign_key => "leader_id"
   belongs_to :project
 
   validates_presence_of :name, :leader, :project, 

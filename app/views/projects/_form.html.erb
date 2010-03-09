@@ -13,6 +13,15 @@
     <%= f.label :customer_id %><br />
     <%= f.select :customer_id, @customers, :prompt=>"Select..." %>
   </p>
+
+  <p>
+    <b>Members</b><br />
+    <% @users.each do |user| %>
+      <%= check_box_tag "project[member_ids][]", user.id, @project.members.include?(user) %>
+      <%= user.name %><br />
+    <% end %>
+  </p>
+
   <p>
     <%= f.submit 'Create' %>
   </p>

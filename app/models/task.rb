@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  # belongs_to :owner
+  belongs_to :owner, :class_name => "User", :foreign_key => "owner_id"
   belongs_to :project
   
   validates_presence_of :title, :project_id, :description, :owner_id 

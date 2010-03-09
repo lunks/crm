@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-  before_filter :load_customers, :only => [:new, :edit, :create, :update]
+  before_filter :load_customers, :except => [:show, :index]
+  before_filter :load_users, :except => [:show, :index]
 
   # GET /projects
   # GET /projects.xml
@@ -89,5 +90,9 @@ protected
 
   def load_customers
     @customers = Customer.all.collect { |c| [c.name, c.id] }
+  end
+
+  def load_users
+    @users = User.all(:order => "name")
   end
 end
