@@ -364,3 +364,98 @@ Processing ProjectsController#index (for 127.0.0.1 at 2010-03-09 11:46:53) [GET]
 Rendering template within layouts/projects
 Rendering projects/index
 Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/projects]
+  [4;36;1mCustomer Load (0.5ms)[0m   [0;1mSELECT * FROM "customers" LIMIT 1[0m
+  [4;35;1mCustomer Load (0.3ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;36;1mCustomer Load (0.1ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Acme, inc' AND "customers".id <> 1) LIMIT 1[0m
+  [4;35;1mProject Load (0.1ms)[0m   [0mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'First Factorial Project') LIMIT 1[0m
+  [4;36;1mProject Create (0.4ms)[0m   [0;1mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "customer_id") VALUES('First Factorial Project', '2010-03-09 14:50:43', '2010-03-09 14:50:43', 'Ohaa, this project is a good one!', 1)[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects".customer_id = 1) [0m
+  [4;36;1mCustomer Load (0.6ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;35;1mCustomer Load (0.3ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Acme, inc' AND "customers".id <> 1) LIMIT 1[0m
+  [4;36;1mProject Load (0.1ms)[0m   [0;1mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Second Factorial Project') LIMIT 1[0m
+  [4;35;1mProject Create (0.6ms)[0m   [0mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "customer_id") VALUES('Second Factorial Project', '2010-03-09 14:50:48', '2010-03-09 14:50:48', 'Another one, man, I will gone be rich!', 1)[0m
+  [4;36;1mCustomer Load (0.3ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Acme, inc' AND "customers".id <> 1) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCustomers (20100309141050)
+Migrating to CreateProjects (20100309142551)
+Migrating to AddActiveColumnToProjects (20100309145232)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (25.9ms)[0m   [0mALTER TABLE "projects" ADD "active" boolean[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100309145232')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("customers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("projects")[0m
+  [4;36;1mCustomer Load (0.1ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Case, Inc') LIMIT 1[0m
+  [4;35;1mCustomer Load (0.3ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Case, Inc') LIMIT 1[0m
+  [4;36;1mCustomer Create (1.4ms)[0m   [0;1mINSERT INTO "customers" ("name", "rating", "created_at", "updated_at", "phone", "description") VALUES('Case, Inc', '5', '2010-03-09 14:53:24', '2010-03-09 14:53:24', NULL, 'A')[0m
+  [4;35;1mCustomer Load (0.6ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 3) [0m
+  [4;36;1mCustomer Load (0.1ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Case, Inc' AND "customers".id <> 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.1ms)[0m   [0mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Project 1') LIMIT 1[0m
+  [4;36;1mProject Create (0.3ms)[0m   [0;1mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "customer_id", "active") VALUES('Project 1', '2010-03-09 14:53:47', '2010-03-09 14:53:47', NULL, 3, 't')[0m
+  [4;35;1mCustomer Load (0.4ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 3) [0m
+  [4;36;1mCustomer Load (0.1ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Case, Inc' AND "customers".id <> 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.1ms)[0m   [0mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Project 2') LIMIT 1[0m
+  [4;36;1mProject Create (0.6ms)[0m   [0;1mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "customer_id", "active") VALUES('Project 2', '2010-03-09 14:53:51', '2010-03-09 14:53:51', NULL, 3, 't')[0m
+  [4;35;1mCustomer Load (0.5ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 3) [0m
+  [4;36;1mCustomer Load (0.2ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Case, Inc' AND "customers".id <> 3) LIMIT 1[0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'Project 3') LIMIT 1[0m
+  [4;36;1mProject Create (0.7ms)[0m   [0;1mINSERT INTO "projects" ("name", "created_at", "updated_at", "description", "customer_id", "active") VALUES('Project 3', '2010-03-09 14:53:56', '2010-03-09 14:53:56', NULL, 3, 't')[0m
+  [4;35;1mProject Load (0.8ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."active" = 't') AND ("projects".customer_id = 3) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."active" = 'f') AND ("projects".customer_id = 3) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM "projects" WHERE (active = 'f') AND ("projects".customer_id = 3) ORDER BY name[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE (active = 't') AND ("projects".customer_id = 3) ORDER BY name[0m
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2010-03-09 11:59:47) [GET]
+  [4;36;1mCustomer Load (0.6ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 41ms (View: 29, DB: 1) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#show (for 127.0.0.1 at 2010-03-09 11:59:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCustomer Load (0.2ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "projects" WHERE ("projects".customer_id = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects".customer_id = 1) [0m
+
+ActionView::TemplateError (undefined local variable or method `project_name' for #<ActionView::Base:0x10346da30>) on line #26 of app/views/customers/show.html.erb:
+23:     <b>Projects:</b>
+24:     <ul>
+25:       <% @customer.projects.each do |project| %>
+26:         <li><%=h project_name %>
+27:       <% end %>
+28:     </ul>
+29:   </p>
+
+    app/views/customers/show.html.erb:26
+    app/views/customers/show.html.erb:25
+    app/controllers/customers_controller.rb:18:in `show'
+
+Rendered rescues/_trace (107.2ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CustomersController#show (for 127.0.0.1 at 2010-03-09 12:00:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCustomer Load (0.2ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/show
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "projects" WHERE ("projects".customer_id = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects".customer_id = 1) [0m
+Completed in 38ms (View: 26, DB: 1) | 200 OK [http://localhost/customers/1]
