@@ -1,0 +1,8 @@
+coverage/*
+doc/*
+log/*
+tmp/*
+.DS_Store
+.project
+Icon?
+
