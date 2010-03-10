@@ -10,4 +10,13 @@ class Task < ActiveRecord::Base
 
   validates_inclusion_of :status, :in => STATUS
   validates_inclusion_of :priority, :in => PRIORITY
+
+  after_create :register_create, { log_changes "create"  }
+  after_update :register_update, { log_changes "update" }
+
+protected
+  def log_changes(state)
+    Log.create(:message => "#{self.owner.name} #{state}: #{self.title}")
+  end
+
 end
