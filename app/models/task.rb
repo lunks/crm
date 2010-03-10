@@ -11,12 +11,12 @@ class Task < ActiveRecord::Base
   validates_inclusion_of :status, :in => STATUS
   validates_inclusion_of :priority, :in => PRIORITY
 
-  after_create :register_create, { log_changes "create"  }
-  after_update :register_update, { log_changes "update" }
+  after_create { |r| log_changes(r, "create") }
+  after_update { |r| log_changes(r, "update") }
 
 protected
-  def log_changes(state)
-    Log.create(:message => "#{self.owner.name} #{state}: #{self.title}")
+  def self.log_changes(resource,state)
+    Log.create(:message => "#{resource.owner.name} #{state}: #{resource.title}")
   end
 
 end
