@@ -14,8 +14,8 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.label :status, "Status" %><br />
+    <%= f.select :status, Contract::STATUS %>
   </p>
   <p>
     <%= f.label :started_at %><br />

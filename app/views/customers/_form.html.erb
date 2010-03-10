@@ -14,8 +14,8 @@
     <%= f.text_field :phone %>
   </p>
   <p>
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
+    <%= f.label :rating, "Rating" %><br />
+    <%= f.select :rating, "1".."5" %>
   </p>
   <p>
     <%= f.submit 'Update' %>

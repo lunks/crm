@@ -11,19 +11,19 @@
   </p>
   <p>
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.select :status, Task::STATUS %>
   </p>
   <p>
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
+    <%= f.label :owner_id, "Owner" %><br />
+    <%= f.select :owner_id, @owners  %>
   </p>
   <p>
-    <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
+    <%= f.label :priority_id, "Priority" %><br />
+    <%= f.select :priority, Task::PRIORITY %>
   </p>
   <p>
     <%= f.label :progress %><br />
-    <%= f.text_field :progress %>
+    <%= f.select :progress, percentage_options_for_select %>
   </p>
   <p>
     <%= f.label :started_at %><br />
@@ -34,8 +34,8 @@
     <%= f.date_select :ended_at, :order => [:day, :month, :year], :prompt=>true %>
   </p>
   <p>
-    <%= f.label :project %><br />
-    <%= f.text_field :project %>
+    <%= f.label :project_id, "Project" %><br />
+    <%= f.select :project_id, @projects %>
   </p>
   <p>
     <%= f.submit 'Create' %>

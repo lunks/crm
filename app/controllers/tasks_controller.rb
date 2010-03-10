@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_filter :load_resources, :except => [:index,:show]
+  
   # GET /tasks
   # GET /tasks.xml
   def index
@@ -82,4 +84,12 @@ class TasksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+protected
+
+  def load_resources
+    @projects = resources_for_select(Project)
+    @owners = resources_for_select(User)
+  end
+
 end

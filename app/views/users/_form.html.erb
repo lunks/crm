@@ -15,7 +15,7 @@
   </p>
   <p>
     <%= f.label :kind %><br />
-    <%= f.text_field :kind %>
+    <%= f.select :kind, User::KIND %>
   </p>
   <p>
     <%= f.submit 'Update' %>
