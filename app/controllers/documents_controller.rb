@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
   before_filter :load_project
+  before_filter :load_projects
 
   # GET /documents
   # GET /documents.xml
@@ -88,6 +89,10 @@ class DocumentsController < ApplicationController
 protected
   def load_project
     @project = Project.find(params[:project_id], :include => :documents)
+  end
+  
+  def load_projects
+    @projects = resources_for_select(Project)
   end
 
 end

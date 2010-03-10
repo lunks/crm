@@ -10,8 +10,8 @@
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :project %><br />
-    <%= f.text_field :project %>
+    <%= f.label :project_id, "Project" %><br />
+    <%= f.select :project_id, @projects %>
   </p>
   <p> 
     <%= f.label :document %>
