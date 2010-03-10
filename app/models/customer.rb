@@ -6,9 +6,12 @@ class Customer < ActiveRecord::Base
 
   validates_uniqueness_of :name
   validates_inclusion_of :rating, :in => "1".."5"
-  validates_numericality_of :phone_country_code
-  validates_numericality_of :phone_area_code
-  validates_format_of :phone_number, :with => /^(\d|\s|-)+$/
+  
+  with_options :allow_nil=>true do |c|
+    c.validates_numericality_of :phone_country_code
+    c.validates_numericality_of :phone_area_code
+    c.validates_format_of :phone_number, :with => /^(\d|\s|-)+$/
+  end
 
   composed_of :phone, :mapping => [
     %w(phone_country_code),
