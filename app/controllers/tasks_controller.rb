@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_filter :load_resources, :except => [:index,:show]
-  
+
   # GET /tasks
   # GET /tasks.xml
   def index
@@ -82,6 +82,17 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(tasks_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  # GET /tasks/urgent
+  # GET /tasks/urgent.xml
+  def urgent
+    @tasks = Task.open.high
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml=>@tasks }
     end
   end
 

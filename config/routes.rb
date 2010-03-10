@@ -1,13 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :tasks
-
+  map.resources :tasks, :collection=>{:urgent=>:get}
   map.resources :contracts
-
   map.resources :users
-
   map.resources :projects
-
   map.resources :customers
+  map.root :controller => "home"
+  map.dashboard "/dashboard", :controller=>"home"
 
   # The priority is based upon order of creation: first created -> highest priority.
 
