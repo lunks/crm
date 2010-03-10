@@ -1,0 +1,25 @@
+<% form_for([@project, @document], :html => { :multipart => true })  do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :project %><br />
+    <%= f.text_field :project %>
+  </p>
+  <p> 
+    <%= f.label :document %>
+    <%= f.file_field :document %>  
+  </p>  
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+

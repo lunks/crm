@@ -3,10 +3,11 @@ class Project < ActiveRecord::Base
 
   has_many :contracts
   has_many :tasks
+  has_many :documents
 
-  has_and_belongs_to_many :members, 
-      :class_name => "User", 
-      :join_table => "projects_members", 
+  has_and_belongs_to_many :members,
+      :class_name => "User",
+      :join_table => "projects_members",
       :association_foreign_key => "member_id"
 
   delegate :name, :to => :customer, :prefix=>true
