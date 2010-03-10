@@ -1,4 +1,6 @@
 class ContractsController < ApplicationController
+  before_filter :load_resources, :except => [:index,:show]
+
   # GET /contracts
   # GET /contracts.xml
   def index
@@ -81,5 +83,11 @@ class ContractsController < ApplicationController
       format.html { redirect_to(contracts_url) }
       format.xml  { head :ok }
     end
+  end
+
+protected
+  def load_resources
+    @leaders = resources_for_select(User)
+    @projects = resources_for_select(Project)
   end
 end

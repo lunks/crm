@@ -30,12 +30,12 @@
     <%= f.text_field :value %>
   </p>
   <p>
-    <%= f.label :leader %><br />
-    <%= f.text_field :leader %>
+    <%= f.label :leader_id, "Leader" %><br />
+    <%= f.select :leader_id, @leaders %>
   </p>
   <p>
-    <%= f.label :project %><br />
-    <%= f.text_field :project %>
+    <%= f.label :project_id, "Project" %><br />
+    <%= f.select :project, @projects %>
   </p>
   <p>
     <%= f.submit 'Create' %>

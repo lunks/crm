@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+protected
+
+  def resources_for_select(resource)
+    resource.all.collect {|c| [c.name,c.id]}
+  end
+
 end
