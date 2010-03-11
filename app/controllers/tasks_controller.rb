@@ -63,6 +63,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
+        notify_users
         flash[:notice] = 'Task was successfully updated.'
         format.html { redirect_to(@task) }
         format.xml  { head :ok }
@@ -101,6 +102,10 @@ protected
   def load_resources
     @projects = resources_for_select(Project)
     @owners = resources_for_select(User)
+  end
+
+  def notify_users
+    TaskNotifier.deliver_update_notification(@task)
   end
 
 end
