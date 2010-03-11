@@ -1,0 +1,11 @@
+page.remove dom_id(@task)
+page.insert_html :top, "completed_tasks", :partial => "task", :locals=>{:task=>@task}
+
+page.remove "task_#{@task.id}"
+page.insert_html :top, "completed_tasks", :partial => "task", :locals=>{:task=>@task}
+
+if current_user.tasks.open.find_all_by_project_id(@task.project.id).size == 0 
+  page.visual_effect :fade,  "project_#{@task.project.id}"  
+end
+
+page.visual_effect :highlight, "task_#{@task.id}", :duration => 3.5

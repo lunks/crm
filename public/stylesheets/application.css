@@ -40,3 +40,31 @@ th {
 #user_nav {
   float: right;
   font-size: 12px;}
+  
+div.group 
+{ 
+  border: 1px solid #000; 
+  margin-bottom: 10px; 
+} 
+
+div.group h2 
+{ 
+  padding: 5px; 
+  margin: 0px; 
+  border-bottom: 1px solid #000; 
+  background-color: #333; 
+  color: #fff; 
+  font-size: 110%; 
+} 
+
+div.group ul 
+{ 
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+} 
+
+div.group ul li 
+{ 
+  margin: 8px 15px; 
+}  

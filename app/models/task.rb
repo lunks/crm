@@ -11,6 +11,13 @@ class Task < ActiveRecord::Base
   validates_inclusion_of :status, :in => STATUS
   validates_inclusion_of :priority, :in => PRIORITY
 
+  # SCOPES
+  # -----------  
+  named_scope :open,   :conditions => { :status   => "open" }
+  named_scope :closed, :conditions => { :status   => "closed"}  
+  named_scope :high,   :conditions => { :priority => "high" }
+  named_scope :low,    :conditions => { :priority => "low"  }  
+
   # after_create { |r| log_changes(r, "create") }
   # after_update { |r| log_changes(r, "update") }
 
