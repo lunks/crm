@@ -1,21 +1,20 @@
-<h1>My Tasks</h1> 
+<h1>My Tasks</h1>
 
+<%= render "form" %>
+
+<div id="projects">
 <% @incomplete_tasks.group_by(&:project).each do |project, tasks| %>
-  <% div_for project, :class => "group" do  %>
-    <h2><%= project.name %></h2> 
-    <ul> 
-      <% tasks.each do |task| %> 
-        <%= render "task", :task => task %> 
-      <% end %> 
-    </ul> 
-  <% end %>
-<% end %> 
-
-<div class="group"> 
-  <h2>Completed Tasks</h2> 
-  <ul id="completed_tasks"> 
-    <% @completed_tasks.each do |task| %> 
-        <%= render "task", :task => task %> 
-    <% end %> 
-  </ul> 
+  <%= render "project", :project => project, :tasks => tasks %>
+<% end %>
 </div>
+
+<div class="group">
+  <h2>Completed Tasks</h2>
+  <ul id="completed_tasks">
+    <% @completed_tasks.each do |task| %>
+        <%= render "task", :task => task %>
+    <% end %>
+  </ul>
+</div>
+
+<%= drop_receiving_element("completed_tasks", :url => { :action => "finish" }) %>

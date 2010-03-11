@@ -40,7 +40,7 @@ th {
 #user_nav {
   float: right;
   font-size: 12px;}
-  
+
 div.group 
 { 
   border: 1px solid #000; 
@@ -67,4 +67,30 @@ div.group ul
 div.group ul li 
 { 
   margin: 8px 15px; 
-}  
+}
+
+div.group 
+{ 
+  margin-right: 265px; 
+} 
+
+div#task_form
+{ 
+  border: 1px solid #000; 
+  float: right; 
+  width: 250px; 
+} 
+
+div.part 
+{ 
+  margin: 10px; 
+} 
+
+div#task_form h2 
+{ 
+  padding: 5px; 
+  margin: 0px; 
+  border-bottom: 1px solid #ccc; 
+  background-color: #333; 
+  color: #fff; 
+  font-size: 110%; }

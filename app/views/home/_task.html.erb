@@ -7,3 +7,7 @@
   <% end %>
   <%= task.title %>
 </li>
+
+<% if task.status == "open" %> 
+  <%= draggable_element "task_#{task.id}", :revert => true %> 
+<% end %>
