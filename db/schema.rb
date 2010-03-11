@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100310024351) do
+ActiveRecord::Schema.define(:version => 20100310041141) do
 
   create_table "contracts", :force => true do |t|
     t.string   "name",        :null => false
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(:version => 20100310024351) do
     t.integer  "phone_country_code"
     t.integer  "phone_area_code"
     t.string   "phone_number"
+  end
+
+  create_table "documents", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "logs", :force => true do |t|
@@ -70,13 +82,21 @@ ActiveRecord::Schema.define(:version => 20100310024351) do
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "name",                     :null => false
-    t.string   "login",      :limit => 16, :null => false
-    t.string   "password",                 :null => false
-    t.string   "kind",                     :null => false
+  create_table "user_sessions", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name",                            :null => false
+    t.string   "username",          :limit => 16, :null => false
+    t.string   "crypted_password",                :null => false
+    t.string   "kind",                            :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.string   "email"
   end
 
 end

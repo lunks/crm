@@ -6,18 +6,26 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :login %><br />
-    <%= f.text_field :login %>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
   </p>
   <p>
     <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
   </p>
   <p>
     <%= f.label :kind %><br />
-    <%= f.select :kind, User::KIND %>
+  	<%= f.select :kind, User::KIND, :prompt => "Select..." %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit "create" %>
   </p>
 <% end %>

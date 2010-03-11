@@ -9,9 +9,9 @@ h1 {
 	margin: 0; }
  
 ul#menu {
-	padding: 5px 0 8px 10px;
+	padding: 0 5px 0 5px;
 	margin: 0;
-	border-bottom: 1px solid black; }
+	float:left; }
  
 	ul#menu li {
 		display: inline;
@@ -19,7 +19,7 @@ ul#menu {
  
 		ul#menu li a { text-decoration:none; }
 
-#contents { margin: 20px; }
+#contents { margin: 40px 20px; }
  
 	#contents h1 {
 		margin: 0 0 20px;
@@ -36,3 +36,7 @@ th, td {
 th {
 	background-color: #ddd;
 	color: grey; }
+	
+#user_nav {
+  float: right;
+  font-size: 12px;}
