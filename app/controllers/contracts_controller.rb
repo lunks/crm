@@ -1,6 +1,6 @@
 class ContractsController < ApplicationController
   before_filter :load_resources, :except => [:index,:show]
-  caches_page :index # , :if => Proc.new { |c| !c.request.format.xml? }
+  # caches_page :index # , :if => Proc.new { |c| !c.request.format.xml? }
 
   # GET /contracts
   # GET /contracts.xml

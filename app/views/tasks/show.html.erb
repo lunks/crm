@@ -1,3 +1,4 @@
+<%- cache do -%>
 <p>
   <b>Title:</b>
   <%=h @task.title %>
@@ -42,7 +43,7 @@
   <b>Project:</b>
   <%=h @task.project.name %>
 </p>
-
+<%- end -%>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

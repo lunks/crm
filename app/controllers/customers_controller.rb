@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  caches_action :index
+  
   # GET /customers
   # GET /customers.xml
   def index
@@ -83,3 +85,4 @@ class CustomersController < ApplicationController
     end
   end
 end
+# cache_sweeper :customer_sweeper, :only=>[:create,:update,:destroy]  
