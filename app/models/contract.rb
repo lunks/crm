@@ -1,6 +1,8 @@
 class Contract < ActiveRecord::Base
   STATUS = %w(prospecting accepted canceled)
 
+  # debugger
+
   belongs_to :leader, :class_name => "User", :foreign_key => "leader_id"
   belongs_to :project
 

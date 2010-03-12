@@ -16,6 +16,7 @@ class ContractsController < ApplicationController
   # GET /contracts/1
   # GET /contracts/1.xml
   def show
+    # debugger
     @contract = Contract.find(params[:id])
 
     respond_to do |format|
