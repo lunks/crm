@@ -2,7 +2,6 @@ coverage/*
 doc/*
 log/*
 tmp/*
-vendor/*
 .DS_Store
 .project
 Icon?
