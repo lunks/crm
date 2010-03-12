@@ -4,17 +4,19 @@
 
 <div id="projects">
 <% @incomplete_tasks.group_by(&:project).each do |project, tasks| %>
-  <%= render "project", :project => project, :tasks => tasks %>
+	<%= render "project", :project => project, :tasks => tasks %>
 <% end %>
 </div>
 
-<div class="group">
-  <h2>Completed Tasks</h2>
-  <ul id="completed_tasks">
-    <% @completed_tasks.each do |task| %>
-        <%= render "task", :task => task %>
-    <% end %>
-  </ul>
+<div id="completed">
+  <div class="group">
+    <h2>Completed Tasks</h2>
+    <ul id="completed_tasks">
+      <% @completed_tasks.each do |task| %> 
+      	<%= render "task", :task => task %> 
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <%= drop_receiving_element("completed_tasks", :url => { :action => "finish" }) %>
