@@ -1,5 +1,6 @@
 class ContractsController < ApplicationController
   before_filter :load_resources, :except => [:index,:show]
+  caches_page :index
 
   # GET /contracts
   # GET /contracts.xml
